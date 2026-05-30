@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Web & Mobile Developer</title>
+    <meta name="description" content="John Carlo Morales - Aspiring Web and Mobile Developer. Check out my projects including SnapAlert, FlexPlanner, and more.">
+    <meta property="og:title" content="John Carlo Morales | Portfolio">
+    <meta property="og:description" content="BSIT student and aspiring Software Engineer specializing in Web and Mobile development.">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#main" class="nav-logo">Morales</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="theme-puller-container" title="Pull to switch theme">
+        <div id="string"></div>
+        <div id="handle"></div>
+    </div>
+
+    <main>
+        <section id="main" class="container reveal">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="status-badge">Available for Hire & Internship</span>
+                    <h1>Hi, I'm <br><span class="highlight">John Carlo Morales</span></h1>
+                    <p class="subtitle">Aspiring Web and Mobile Developer exploring software engineering through curiosity and continuous learning.</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn-primary">Let's Talk</a>
+                        <a href="assets/Morales_CV.pdf" class="btn-secondary" download>
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                        <a href="#projects" class="btn-secondary">View Work</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="images/profile.jpg" alt="My Profile" class="profile-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="container reveal">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-image-stack" id="imageStack">
+                    <div class="stack-card active"><img src="images/profile.jpg" alt="Profile 1" loading="lazy"></div>
+                    <div class="stack-card"><img src="images/picture2.jpg" alt="Profile 2" loading="lazy"></div>
+                    <div class="stack-card"><img src="images/picture3.jpg" alt="Profile 3" loading="lazy"></div>
+                </div>
+                <div class="about-text">
+                    <p>
+                       I am a third-year BS Information Technology student who is passionate about learning and personal growth. Technology offers countless opportunities to explore, and I enjoy discovering new tools, concepts, and fields that challenge me to think differently. Each experience helps me build new skills, broaden my understanding, and become more adaptable. I am committed to continuous improvement and look forward to applying what I learn to meaningful projects and future opportunities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="container reveal">
+            <h2>Technical Skills</h2>
+            
+            <div class="skills-category">
+                <h3>Frontend</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fa-brands fa-react"></i> React</div>
+                    <div class="skill-card"><i class="fa-brands fa-html5"></i> HTML5</div>
+                    <div class="skill-card"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                    <div class="skill-card"><i class="fa-brands fa-js"></i> JavaScript</div>
+                    <div class="skill-card"><i class="fa-solid fa-wind"></i> Tailwind CSS</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Backend</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fa-brands fa-python"></i> Python</div>
+                    <div class="skill-card"><i class="fa-solid fa-hashtag"></i> C#</div>
+                    <div class="skill-card"><i class="fa-brands fa-java"></i> Java</div>
+                    <div class="skill-card"><i class="fa-solid fa-database"></i> Supabase</div>
+                    <div class="skill-card"><i class="fa-solid fa-server"></i> PostgreSQL</div>
+                    <div class="skill-card"><i class="fa-solid fa-database"></i> SQLite</div>
+                    <div class="skill-card"><i class="fa-brands fa-php"></i> PHP</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Mobile Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fa-solid fa-mobile-screen"></i> Kotlin / Compose</div>
+                    <div class="skill-card"><i class="fa-brands fa-java"></i> Java</div>
+                    <div class="skill-card"><i class="fa-solid fa-rocket"></i> Expo React-native</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Development Tools</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><i class="fa-brands fa-git-alt"></i> Git & GitHub</div>
+                    <div class="skill-card"><i class="fa-brands fa-android"></i> Android Studio</div>
+                    <div class="skill-card"><i class="fa-solid fa-code"></i> VS Code</div>
+                    <div class="skill-card"><i class="fa-solid fa-wand-magic-sparkles"></i> Gemini</div>
+                    <div class="skill-card"><i class="fa-solid fa-brain"></i> Claude</div>
+                    <div class="skill-card"><i class="fa-solid fa-robot"></i> ChatGPT</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="reveal">
+            <h2 class="container">Projects</h2>
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    <div class="project-card">
+                        <img src="images/projects/SnapAlert.png" alt="SnapAlert Emergency App" loading="lazy">
+                        <div class="project-info">
+                            <span class="project-category">Web & Mobile App</span>
+                            <h3>SnapAlert</h3>
+                            <p>An emergency reporting system built with Expo and Supabase, allowing users to report incidents instantly via photo or video.</p>
+                        </div>
+                    </div>
+                      <div class="project-card">
+                        <img src="images/projects/FlexPlanner.png" alt="Fitness Tracker" loading="lazy">
+                        <div class="project-info">
+                            <span class="project-category">Mobile App</span>
+                            <h3>FlexPlanner</h3>
+                            <p>A Kotlin-based fitness companion using Jetpack Compose and SQLite to track muscle-specific exercises and calories.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/attendee.jpg" alt="Attendee System" loading="lazy">
+                        <div class="project-info">
+                            <span class="project-category">Monitoring System</span>
+                            <h3>Attendee</h3>
+                            <p>Monitoring system for Medical Reps built with Kotlin and Jetpack Compose, featuring SQLite and Supabase integration.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/adventuresofeggy.png" alt="Adventures of Eggy" loading="lazy">
+                        <div class="project-info">
+                            <span class="project-category">2D Game</span>
+                            <h3>Adventures of Eggy</h3>
+                            <p>A Python and Pygame platformer where precision is key—jump too high and your egg character will crack!</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/SnapAlert.png" alt="SnapAlert Emergency App">
+                        <div class="project-info">
+                            <span class="project-category">Web & Mobile App</span>
+                            <h3>SnapAlert</h3>
+                            <p>An emergency reporting system built with Expo and Supabase, allowing users to report incidents instantly via photo or video.</p>
+                        </div>
+                    </div>
+                                         <div class="project-card">
+                        <img src="images/projects/FlexPlanner.png" alt="Fitness Tracker">
+                        <div class="project-info">
+                            <span class="project-category">Mobile App</span>
+                            <h3>FlexPlanner</h3>
+                            <p>A Kotlin-based fitness companion using Jetpack Compose and SQLite to track muscle-specific exercises and calories.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/attendee.jpg" alt="Attendee System">
+                        <div class="project-info">
+                            <span class="project-category">Monitoring System</span>
+                            <h3>Attendee</h3>
+                            <p>Monitoring system for Medical Reps built with Kotlin and Jetpack Compose, featuring SQLite and Supabase integration.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/adventuresofeggy.png" alt="Adventures of Eggy">
+                        <div class="project-info">
+                            <span class="project-category">2D Game</span>
+                            <h3>Adventures of Eggy</h3>
+                            <p>A Python and Pygame platformer where precision is key—jump too high and your egg character will crack!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="container reveal">
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <span class="exp-date">Mar 2026 — May 2026</span>
+                        <span class="exp-company">Premier Pharmaceuticals Marketing, Corp.</span>
+                    </div>
+                    <div class="exp-content">
+                        <h3>System Developer</h3>
+                        <p>Architected and implemented custom operational systems that transformed daily workflows, significantly reducing manual complexity and increasing team productivity.</p>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-meta">
+                        <span class="exp-date">April 2025</span>
+                        <span class="exp-company">Hack-it! The New Era of Banking</span>
+                    </div>
+                    <div class="exp-content">
+                        <h3>AI & LLM Developer</h3>
+                        <p>Developed a custom Large Language Model (LLM) for an AI-assisted KYC insurance platform, significantly accelerating the application review and processing workflow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="container reveal">
+            <div class="section-header">
+                <h2>Education</h2>
+                <div class="scroll-hint" id="scrollHint">
+                    <span>Scroll to see more</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-list">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>STI Global City</h3>
+                        <p class="date">2023 - Present | Taguig City</p>
+                        <p>Bachelor of Science in Information Technology (BSIT)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>Arellano University</h3>
+                        <p class="date">2021 - 2023 | Pasay City</p>
+                        <p>Accountancy, Business, and Management (ABM)</p>
+                        <p><strong>With Honors</strong></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>Dr. Arcadio Santos National HighSchool</h3>
+                        <p class="date">2017 - 2021 | Parañaque City</p>
+                        <p>High School Diploma</p>
+                        <p><strong>With Honors</strong></p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <h3>Silangan Elementary School</h3>
+                        <p class="date">2011 - 2017 | Taguig City</p>
+                        <p>Elementary Education</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <footer id="contact" class="container reveal">
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <p class="info-label">Email</p>
+                            <a href="mailto:johncarlomorales765@gmail.com">johncarlomorales765@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <p class="info-label">Phone</p>
+                            <a href="tel:+639610375756">+63 961 037 5756</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <p class="info-label">Location</p>
+                            <span>Taguig City, Philippines</span>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="f3322825-b839-43b6-8031-855707ab12ab">
+                    <input type="hidden" name="subject" value="New Portfolio Inquiry">
+                    <input type="hidden" name="from_name" value="My Portfolio Bot">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+                <div id="contactSuccess" class="contact-success" style="display: none;">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <div id="projectModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Project Preview">
+                <div class="modal-text">
+                    <h2 id="modalTitle">Project Title</h2>
+                    <div id="modalTechStack" class="modal-tech-stack"></div>
+                    <p id="modalDescription">Detailed project description...</p>
+                    <div class="modal-links">
+                        <a href="#" id="modalLiveLink" class="btn-primary" target="_blank">Live Demo</a>
+                        <a href="#" id="modalGithubLink" class="btn-secondary" target="_blank">View Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
