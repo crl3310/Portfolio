@@ -159,6 +159,7 @@ const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target); // Stop watching once revealed
         }
     });
 }, {
@@ -327,7 +328,11 @@ document.addEventListener('click', (e) => {
             const tag = document.createElement('div');
             tag.className = 'tech-tag';
             const icon = document.createElement('i');
-            icon.className = tech.icon;
+            
+            // Split class names to handle multiple classes correctly (e.g., "fa-solid fa-database")
+            const iconClasses = tech.icon.split(' ');
+            icon.classList.add(...iconClasses);
+            
             tag.appendChild(icon);
             tag.append(` ${tech.name}`);
             techStackContainer.appendChild(tag);
@@ -425,6 +430,8 @@ if (profileWrapper && profileImg) {
 
 const contactForm = document.getElementById('contactForm');
 const contactSuccess = document.getElementById('contactSuccess');
+const contactError = document.getElementById('contactError');
+const errorMessage = document.getElementById('errorMessage');
 
 if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
@@ -435,6 +442,7 @@ if (contactForm) {
 
         submitBtn.disabled = true;
         submitBtn.innerText = 'Sending...';
+        contactError.style.display = 'none';
 
         try {
             const response = await fetch(this.action, {
@@ -450,12 +458,14 @@ if (contactForm) {
                 contactSuccess.style.display = 'flex';
             } else {
                 const data = await response.json();
-                alert(data.error || "Oops! There was a problem submitting your form.");
+                errorMessage.innerText = data.error || "There was a problem submitting your form.";
+                contactError.style.display = 'flex';
                 submitBtn.disabled = false;
                 submitBtn.innerText = 'Send Message';
             }
         } catch (error) {
-            alert("Oops! There was a problem connecting to the server.");
+            errorMessage.innerText = "Could not connect to the server. Please try again later.";
+            contactError.style.display = 'flex';
             submitBtn.disabled = false;
             submitBtn.innerText = 'Send Message';
         }
