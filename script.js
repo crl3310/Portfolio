@@ -1,3 +1,12 @@
+// --- Carousel Infinite Scroll Logic ---
+const track = document.querySelector('.carousel-track');
+if (track) {
+    const originalCards = Array.from(track.children);
+    originalCards.forEach(card => {
+        track.appendChild(card.cloneNode(true));
+    });
+}
+
 const puller = document.getElementById('theme-puller-container');
 const string = document.getElementById('string');
 const htmlElement = document.documentElement;
@@ -252,8 +261,6 @@ window.addEventListener('touchend', handleDragEnd);
 
 const modal = document.getElementById('projectModal');
 const modalClose = document.querySelector('.modal-close');
-const projectCards = document.querySelectorAll('.project-card');
-
 
 const projectDetails = {
     "SnapAlert": {
@@ -301,40 +308,43 @@ const projectDetails = {
     }
 };
 
-projectCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const projectId = card.getAttribute('data-project');
-        const details = projectDetails[projectId];
+// Using Event Delegation for project cards
+document.addEventListener('click', (e) => {
+    const card = e.target.closest('.project-card');
+    if (!card) return;
+
+    const projectId = card.getAttribute('data-project');
+    const details = projectDetails[projectId];
+    
+    if (details) {
+        document.getElementById('modalImage').src = card.querySelector('img').src;
+        document.getElementById('modalTitle').innerText = projectId;
+        document.getElementById('modalDescription').innerText = details.description;
+
+        const techStackContainer = document.getElementById('modalTechStack');
+        techStackContainer.innerHTML = ''; 
+        details.techStack.forEach(tech => {
+            const tag = document.createElement('div');
+            tag.className = 'tech-tag';
+            const icon = document.createElement('i');
+            icon.className = tech.icon;
+            tag.appendChild(icon);
+            tag.append(` ${tech.name}`);
+            techStackContainer.appendChild(tag);
+        });
+
+        const liveLink = document.getElementById('modalLiveLink');
+        const githubLink = document.getElementById('modalGithubLink');
+
+        liveLink.style.display = (details.live === "#" || !details.live) ? 'none' : 'inline-block';
+        liveLink.href = details.live;
+
+        githubLink.style.display = (details.github === "#" || !details.github) ? 'none' : 'inline-block';
+        githubLink.href = details.github;
         
-        if (details) {
-            document.getElementById('modalImage').src = card.querySelector('img').src;
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalTitle').innerText = projectId;
-            document.getElementById('modalDescription').innerText = details.description;
-
-            const techStackContainer = document.getElementById('modalTechStack');
-            techStackContainer.innerHTML = ''; 
-            details.techStack.forEach(tech => {
-                const tag = document.createElement('div');
-                tag.className = 'tech-tag';
-                tag.innerHTML = `<i class="${tech.icon}"></i> ${tech.name}`;
-                techStackContainer.appendChild(tag);
-            });
-
-            const liveLink = document.getElementById('modalLiveLink');
-            const githubLink = document.getElementById('modalGithubLink');
-
-   
-            liveLink.style.display = (details.live === "#" || !details.live) ? 'none' : 'inline-block';
-            liveLink.href = details.live;
-
-            githubLink.style.display = (details.github === "#" || !details.github) ? 'none' : 'inline-block';
-            githubLink.href = details.github;
-            
-            modal.classList.add('active');
-            document.body.classList.add('modal-open');
-        }
-    });
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+    }
 });
 
 function closeModal() {
