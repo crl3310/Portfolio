@@ -49,6 +49,7 @@
 }
 
 html {
+    overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: var(--card-border) var(--bg);
 }
@@ -125,6 +126,11 @@ h1, h2, h3 {
     transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .nav-links a:hover,
 .nav-links a.active,
 .nav-logo.active {
@@ -143,6 +149,17 @@ h1, h2, h3 {
     transform: scale(1.05);
     color: var(--accent);
     opacity: 1;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1101;
 }
 
 #theme-puller-container {
@@ -326,7 +343,8 @@ h1, h2, h3 {
 }
 
 .profile-img {
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     height: 380px;
     border-radius: 32px;
     object-fit: cover;
@@ -1087,13 +1105,38 @@ body.modal-open {
     h1 { font-size: 2rem; }
 
     #theme-puller-container {
-        right: 20px;
+        right: 70px;
+        top: -10px;
+    }
+
+    .nav-toggle {
+        display: block;
     }
 
     .nav-links {
-        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+        background: var(--bg);
+        padding: 6rem 2rem 2rem;
+        gap: 2rem;
+        border-left: 1px solid var(--card-border);
+        box-shadow: var(--shadow);
+        z-index: 1050;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
     }
-    
+
+    .nav-links.nav-active {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
     .nav-container {
         padding: 1rem;
     }
